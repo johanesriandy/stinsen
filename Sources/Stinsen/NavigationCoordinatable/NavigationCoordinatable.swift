@@ -299,6 +299,8 @@ public extension NavigationCoordinatable {
     }
     
     func dismissChild<T: Coordinatable>(coordinator: T, action: (() -> Void)?) {
+        RouterStore.shared.removeLast()
+        
         let value = stack.value.firstIndex { item in
             guard let presentable = item.presentable as? StringIdentifiable else {
                 return false
