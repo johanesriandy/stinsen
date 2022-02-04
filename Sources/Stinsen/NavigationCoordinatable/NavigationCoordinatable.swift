@@ -353,9 +353,9 @@ public extension NavigationCoordinatable {
         }
     }
     
-    func view() -> AnyView {
-        return AnyView(NavigationCoordinatableView(id: -1, coordinator: self))
-    }
+//    func view() -> AnyView {
+//        return AnyView(NavigationCoordinatableView(id: -1, coordinator: self))
+//    }
 
     func popToRoot(_ action: (() -> ())? = nil) -> Self {
         self.popTo(-1, action)
