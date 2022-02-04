@@ -7,7 +7,7 @@ public enum PresentationType {
     @available(iOS 14, tvOS 14, watchOS 7, *)
     case fullScreen
     
-    var isModal: Bool {
+    public var isModal: Bool {
         switch self {
         case .modal:
             return true
@@ -16,7 +16,7 @@ public enum PresentationType {
         }
     }
     
-    var isPush: Bool {
+    public var isPush: Bool {
         switch self {
         case .push:
             return true
@@ -26,7 +26,7 @@ public enum PresentationType {
     }
     
     @available(iOS 14, tvOS 14, watchOS 7, *)
-    var isFullScreen: Bool {
+    public var isFullScreen: Bool {
         switch self {
         case .fullScreen:
             return true

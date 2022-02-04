@@ -314,7 +314,7 @@ public extension NavigationCoordinatable {
         stack.parent!.dismissChild(coordinator: self, action: action)
     }
     
-    internal func setupRoot() {
+    func setupRoot() {
         let a = self[keyPath: self.stack.initial] as! NavigationOutputable
         let presentable = a.using(coordinator: self, input: self.stack.initialInput as Any)
         
@@ -327,7 +327,7 @@ public extension NavigationCoordinatable {
         self.stack.root = NavigationRoot(item: item)
     }
     
-    internal func appear(_ int: Int) {        
+    func appear(_ int: Int) {        
         self.popTo(int, nil)
     }
     

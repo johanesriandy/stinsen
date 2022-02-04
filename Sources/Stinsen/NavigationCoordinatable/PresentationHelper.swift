@@ -2,12 +2,12 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
+public final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
     private let id: Int
     let navigationStack: NavigationStack<T>
     private var cancellables = Set<AnyCancellable>()
     
-    @Published var presented: Presented?
+    @Published public var presented: Presented?
     
     func setupPresented(coordinator: T) {
         let value = self.navigationStack.value
@@ -117,7 +117,7 @@ final class PresentationHelper<T: NavigationCoordinatable>: ObservableObject {
         }
     }
     
-    init(id: Int, coordinator: T) {
+    public init(id: Int, coordinator: T) {
         self.id = id
         self.navigationStack = coordinator.stack
         
